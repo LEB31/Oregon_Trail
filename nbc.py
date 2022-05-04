@@ -265,7 +265,21 @@ def end():
     next = Button(go, text="Next", command=quit).place(x=475,y=200)
 
 def checksupplies():
-    pass
+    new = Toplevel()
+    new.geometry("600x400")
+    new.configure(bg="#e6b8a0")
+    load = Image.open('think.png')
+    resize = load.resize((375, 275), Image.Resampling.LANCZOS)
+    render = ImageTk.PhotoImage(resize) 
+    img1 = Label(new, image=render)
+    img1.image=render
+    img1.place(x=0,y=0)  
+
+    # Label 
+    lb = Label(new, text='Oh No! \nSomeone forgot to pack!\nGuess we have to try again another day.', fg ="#843c3c", bg="#e6b8a0").place(x=380,y=50)
+    # Button 
+    no = Button(new, text="Quit", command=quit, fg ="#843c3c").place(x=475,y=200)
+    
 
 # Create a window
 win = Tk()
